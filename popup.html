@@ -1,0 +1,133 @@
+<body>
+  <style>
+    body {
+      width: 280px;
+      padding: 16px 18px 18px;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      box-sizing: border-box;
+    }
+
+    .popup-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .badge {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.15);
+      color: #cbd5f5;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+    }
+
+    .subtitle {
+      font-size: 12px;
+      color: #9ca3af;
+      margin: 0 0 8px;
+    }
+
+    #fillBtn {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #f9fafb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.7);
+      transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.15s ease;
+    }
+
+    #fillBtn span.icon {
+      font-size: 16px;
+    }
+
+    #fillBtn:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.85);
+    }
+
+    #fillBtn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(15, 23, 42, 0.7);
+      filter: brightness(0.97);
+    }
+
+    #fillBtn:disabled {
+      opacity: 0.6;
+      cursor: default;
+      box-shadow: none;
+      filter: grayscale(0.2);
+    }
+
+    #status {
+      font-size: 11px;
+      color: #9ca3af;
+      min-height: 14px;
+      margin: 2px 0 0;
+    }
+
+    .hint {
+      font-size: 10px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+
+    .hint a {
+      color: #a5b4fc;
+      text-decoration: none;
+    }
+
+    .hint a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <div class="popup-container">
+    <div class="header">
+      <div class="title">AI Form Filler</div>
+      <div class="badge">Gemini</div>
+    </div>
+
+    <p class="subtitle">
+      Click once and we'll try to auto-complete the visible form using your saved resume/bio.
+    </p>
+
+    <button id="fillBtn">
+      <span>Fill form with AI</span>
+    </button>
+
+    <p id="status"></p>
+
+    <p class="hint">
+      Configure your API key and resume in the extension's options page.
+    </p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>

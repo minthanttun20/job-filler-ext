@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AI Job Filler Pro",
+  "version": "1.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "icons": {
+    "16": "img/icon.png",
+    "32": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "img/icon.png",
+      "32": "img/icon.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
